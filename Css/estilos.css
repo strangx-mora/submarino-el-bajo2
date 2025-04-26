@@ -1,0 +1,669 @@
+/* === RESET Y BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #f0f8ff;
+    color: #333;
+    line-height: 1.6;
+  }
+
+
+
+/* === NAVBAR PROFESIONAL === */
+.navbar {
+    background: #00b4d8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar.sticky {
+    background-color: #0077b6;  /* Cambia el color de fondo cuando hace scroll */
+  }
+  
+  .navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #caf0f8;
+  }
+  
+  /* Menú para móvil */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #00b4d8;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      padding: 1rem 0;
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
+
+
+
+
+
+/* HERO SECTION */
+#hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url('https://cdn.pixabay.com/photo/2016/11/29/02/06/underwater-1869245_1280.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+  }
+  
+  .hero-content {
+    max-width: 850px;
+    z-index: 2;
+    animation: fadeIn 1.5s ease;
+  }
+  
+  .hero-title {
+    font-size: 3.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .hero-title .highlight {
+    color: #ffdd57;
+    font-style: italic;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+    color: #e3f2fd;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .hero-btn {
+    background-color: #00b4d8;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 14px 34px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hero-btn:hover {
+    background-color: #0077b6;
+    transform: translateY(-4px);
+  }
+  
+  /* Waves */
+  .wave-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+    background: url('https://svgshare.com/i/ubD.svg') repeat-x;
+    animation: waveMove 12s linear infinite;
+    opacity: 0.75;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes glow {
+    0% {
+      text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57;
+    }
+    100% {
+      text-shadow: 0 0 5px #fff, 0 0 15px #00b4d8;
+    }
+  }
+  
+  @keyframes waveMove {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 1000px;
+    }
+  }
+
+  .tour {
+    background-color: #f0fafd;
+    padding: 5rem 2rem;
+  }
+  
+  .tour h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    color: #0077b6;
+    margin-bottom: 1rem;
+  }
+  
+  .tour h2 span {
+    display: block;
+    font-size: 1.3rem;
+    color: #555;
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+  
+  .tour-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .tour-text {
+    flex: 1 1 500px;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.8;
+  }
+  
+  .tour-highlights {
+    list-style: none;
+    padding: 1rem 0;
+  }
+  
+  .tour-highlights li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #0077b6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .tour-highlights i {
+    font-size: 1.2rem;
+    color: #00b4d8;
+  }
+  
+  .tour-img {
+    flex: 1 1 400px;
+    text-align: center;
+  }
+  
+  .tour-img img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+
+
+
+
+
+
+
+  /* === WAVE EFFECT === */
+  .wave-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: #00b4d8;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    animation: wave-animation 10s ease-in-out infinite;
+  }
+  
+  /* === SECCIONES === */
+  section {
+    padding: 3rem 1.5rem;
+  }
+  
+  section h2 {
+    font-size: 2.5rem;
+    color: #0077b6;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  /* === FAUNA MARINA === */
+  .fauna {
+    background: #e0f7fa;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .fauna-desc {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: #444;
+  }
+  
+  .fauna-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .fauna-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .fauna-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+  
+  .fauna-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .fauna-card h3 {
+    margin: 1rem 0 0.5rem;
+    color: #0077b6;
+    font-size: 1.3rem;
+  }
+  
+  .fauna-card p {
+    padding: 0 1rem 1.5rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* === ITINERARIO EN TABLA === */
+  .itinerario {
+    background: #f7fcfc;
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+  
+  .tabla-container {
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .tabla-itinerario {
+    width: 90%;
+    max-width: 800px;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tabla-itinerario thead {
+    background-color: #00b4d8;
+    color: white;
+  }
+  
+  .tabla-itinerario th,
+  .tabla-itinerario td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .tabla-itinerario tbody tr:hover {
+    background-color: #f1f9fb;
+    transition: 0.3s;
+  }
+  
+  /* === GALERÍA PORTAFOLIO === */
+  .portfolio {
+    padding: 4rem 2rem;
+    background: #e0f7fa;
+    text-align: center;
+  }
+  
+  .portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #0077b6;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .gallery-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    border-radius: 12px;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* === FOOTER === */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* === ANIMACIONES === */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.6s ease;
+  }
+  
+  @keyframes wave-animation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+  
+    .hero-title {
+      font-size: 2.2rem;
+    }
+  
+    .gallery-grid,
+    .fauna-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+/* Galería con filtros */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .gallery-item {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Proporción uniforme */
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rellena sin deformar */
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Botones de filtro */
+  .filter-buttons {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .filter-buttons button {
+    padding: 10px 20px;
+    background-color: #00b4d8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  
+  .filter-buttons button.active,
+  .filter-buttons button:hover {
+    background-color: #0077b6;
+  }
+  .tarifas {
+    background: #f0fbff;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .tarifas h2 {
+    font-size: 2.5rem;
+    color: #0077b6;
+    margin-bottom: 1rem;
+  }
+  
+  .tarifas-desc {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: #555;
+  }
+  
+  .tarifa-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .tarifa-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    transition: transform 0.3s ease;
+  }
+  
+  .tarifa-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .tarifa-card i {
+    color: #00b4d8;
+    margin-bottom: 1rem;
+  }
+  
+  .tarifa-card h3 {
+    font-size: 1.5rem;
+    color: #0077b6;
+    margin-bottom: 0.5rem;
+  }
+  
+  .precio {
+    font-size: 2rem;
+    color: #ff6b6b;
+    font-weight: bold;
+  }
+  
+  .precio-usd {
+    font-size: 1.1rem;
+    color: #888;
+    margin-bottom: 1rem;
+  }
+  
+  .nota {
+    font-size: 0.95rem;
+    margin-top: 3rem;
+    color: #777;
+  }
+  .educativa {
+    background: #e6f8fa;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .educativa h2 {
+    font-size: 2.5rem;
+    color: #0077b6;
+    margin-bottom: 1rem;
+  }
+  
+  .educativa-desc {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .educativa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .edu-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .edu-card:hover {
+    transform: translateY(-6px);
+  }
+  
+  .edu-card i {
+    font-size: 2.5rem;
+    color: #00b4d8;
+    margin-bottom: 1rem;
+  }
+  
+  .edu-card h3 {
+    font-size: 1.4rem;
+    color: #0077b6;
+    margin-bottom: 0.5rem;
+  }
+  
+  .edu-card p {
+    color: #444;
+    font-size: 1rem;
+  }
+    
+    
